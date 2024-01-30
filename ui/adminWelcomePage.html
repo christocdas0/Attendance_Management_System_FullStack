@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./constant/filePaths.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="adminPageContainer">
+        <div>
+            <p class="welcomText">Welcome <span id="welcomTextSpan"></span></p>
+        </div>
+        <div class="adminSubContainer">
+            <div class="studentsSecBtn">
+                <button onclick="navigatePage('addStudent.html')">ADD/EDIT STUDENTS</button>
+            </div>
+            <div class="addEditAttendanceSec">
+                <button onclick="navigatePage('viewOrEditAttendanceAdmin.html')">VIEW/EDIT ATTENDANCE</button>
+                <button onclick="navigatePage('addAttendanceForAdmin.html')" >ADD ATTENDANCE</button>
+                <!-- <button onclick="navigatePage('editAttendance.html')">EDIT ATTENDANCE</button> -->
+            </div>
+           
+            <div class="teachersSecBtn">
+                <button onclick="navigatePage('addTeacher.html')">ADD/EDIT TEACHERS</button>
+            </div>
+            <div class="admin_Cls">
+                <button onclick="navigatePage('addAdmin.html')">ADD/EDIT ADMIN</button>
+                <button onclick="navigatePage('addClass.html')">ADD/EDIT CLASS</button>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const welcomeTextSpan = document.getElementById('welcomTextSpan');
+            welcomeTextSpan.innerText = window.localStorage.getItem('userName');
+        });
+    </script>
+</body>
+
+</html>

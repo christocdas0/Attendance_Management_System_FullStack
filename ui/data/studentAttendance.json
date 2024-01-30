@@ -1,0 +1,23 @@
+[
+    {"date": "2024-01-01", "status": "Present"},
+    {"date": "2024-01-03", "status": "Absent"},
+    {"date": "2024-01-05", "status": "Present"},
+    {"date": "2024-01-07", "status": "Present"},
+    {"date": "2024-01-09", "status": "Absent"},
+    {"date": "2024-01-11", "status": "Present"},
+    {"date": "2024-01-13", "status": "Absent"},
+    {"date": "2024-01-15", "status": "Present"},
+    {"date": "2024-01-17", "status": "Present"},
+    {"date": "2024-01-19", "status": "Absent"},
+    {"date": "2024-01-21", "status": "Present"},
+    {"date": "2024-01-23", "status": "Present"},
+    {"date": "2024-01-25", "status": "Absent"},
+    {"date": "2024-01-27", "status": "Present"},
+    {"date": "2024-01-29", "status": "Present"},
+    {"date": "2024-01-05", "status": "Present"},
+    {"date": "2024-01-07", "status": "Present"},
+    {"date": "2024-01-09", "status": "Absent"},
+    {"date": "2024-01-11", "status": "Present"},
+    {"date": "2024-01-13", "status": "Absent"},
+    {"date": "2024-01-15", "status": "Present"}
+]

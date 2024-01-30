@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="constant/filePaths.js"></script>
+</head>
+
+<body>
+    <div class="loginFormMainWrapper">
+        <div class="attandanceDisplayField">
+            <!-- <h1>Official </h1>
+                 <p>website for college</p> -->
+        </div>
+        <div class="loginFormContainer">
+            <h1 style="font-size: 43px; margin-bottom: 0px; text-transform: uppercase;">Official </h1>
+                 <p style="margin-top: 0px;">website for college</p>
+              
+            <h2>LOGIN</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <span id="invalidUserNameTxt">Invalid username or password. Please try again.</span>
+                <div style="display: none;" id="validateTxt">Validating Login Please wait...</div>
+                <button id="loginBtn" type="button" onclick="validateUser()">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- <script src="app.js"></script> -->
+    <script src="loginPage.js"></script>
+</body>
+
+</html>

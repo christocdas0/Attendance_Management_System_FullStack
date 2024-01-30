@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Attendance</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./constant/filePaths.js"></script>
+    <!-- <script src="app.js"></script> -->
+</head>
+
+<body>
+    <div id="addAttendanceMainContainer">
+        <div id="left-side">
+            <h2>Edit Attendance</h2>
+            <label for="attendanceDate">Date:</label>
+            <input type="text" id="attendanceDate" /> <br>
+
+            <label for="classDropdown">Class:</label>
+            <select id="classDropdown">
+                <option value="bcs">BCS</option>
+                <option value="bca">BCA</option>
+                <option value="mca">MCA</option>
+                <!-- Add more options as needed -->
+            </select>
+            <br>
+
+            <button onclick="viewAttendance()">View</button>
+            <button id="absentBtn" onclick="markAbsent()">Absent</button>
+            <button onclick="markPresent()">Present</button>
+            <button onclick="submitAttendance()"><img src="./icons/save.png" alt=""> Submit</button>
+            <!-- <button id="deleteBtn" onclick="deleteSelectedRows()"> <img src="./icons//delete.png" alt=""> Delete</button> -->
+        </div>
+
+        <div id="right-side">
+            <h2>Edit Attendance Table</h2>
+            <span id="attendanceStatusText"></span>
+            <span id="attendanceStatusTextDel"></span>
+            <table id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th >Select</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th class="hiddenCol">DB ID</th>
+                        <th class="hiddenCol">Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="editAttendanceTeacher.js"></script>
+    <script>
+        
+        function markAbsent() {
+            updateStatus("Absent");
+        }
+
+        function markPresent() {
+            updateStatus("Present");
+        }
+
+        function updateStatus(status) {
+            var table = document.getElementById("attendanceTable");
+            var rows = table
+                .getElementsByTagName("tbody")[0]
+                .getElementsByTagName("tr");
+
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName("td");
+                if (cells.length > 3) {
+                    // Check if row has enough cells
+                    var checkbox = cells[0].getElementsByTagName("input")[0];
+                    if (checkbox.checked) {
+                        cells[3].innerText = status;
+                    }
+                }
+            }
+        }
+
+        function clearTable() {
+            var table = document
+                .getElementById("attendanceTable")
+                .getElementsByTagName("tbody")[0];
+            while (table.firstChild) {
+                table.removeChild(table.firstChild);
+            }
+        }
+        function deleteSelectedRows() {
+            var table = document.getElementById("attendanceTable");
+            var checkboxes = table.getElementsByTagName('input');
+
+            for (var i = checkboxes.length - 1; i >= 0; i--) {
+                if (checkboxes[i].type === 'checkbox' && checkboxes[i].checked) {
+                    var rowIndex = checkboxes[i].closest('tr').rowIndex;
+                    table.deleteRow(rowIndex);
+                }
+            }
+            var attendanceStatusText = document.getElementById('attendanceStatusTextDel');
+            attendanceStatusText.style.visibility = 'visible';
+            attendanceStatusText.innerText = 'Deleted!!';
+            attendanceStatusText.style.color = 'red';
+            attendanceStatusText.style.background = 'white';
+            attendanceStatusText.style.padding = '3px';
+            attendanceStatusText.style.borderRadius = '10px';
+            setTimeout(function(){
+                attendanceStatusText.style.visibility = 'hidden';
+            },2000)
+        }
+        // function submitAttendance_() {
+        //     var table = document.getElementById("attendanceTable");
+        //     var rows = table
+        //         .getElementsByTagName("tbody")[0]
+        //         .getElementsByTagName("tr");
+        //     var data = [];
+
+        //     for (var i = 0; i < rows.length; i++) {
+        //         var cells = rows[i].getElementsByTagName("td");
+        //         if (cells.length > 3) {
+        //             // Check if row has enough cells
+        //             var checkbox = cells[0].getElementsByTagName("input")[0];
+        //             var id = cells[1].innerText;
+        //             var name = cells[2].innerText;
+        //             var status = cells[3].innerText;
+        //             data.push({ id: id, name: name, status: status });
+                    
+        //         }
+        //     }
+        //     var attendanceStatusText = document.getElementById('attendanceStatusText');
+        //     attendanceStatusText.style.visibility = 'visible';
+        //     attendanceStatusText.innerText = 'Submitted!!';
+        //     attendanceStatusText.style.color = '#20f30d';
+        //     attendanceStatusText.style.background = '#664848';
+        //     attendanceStatusText.style.padding = '3px';
+        //     attendanceStatusText.style.borderRadius = '10px';
+        //     setTimeout(function(){
+        //         attendanceStatusText.style.visibility = 'hidden';
+        //     },2000)
+        //     console.log("Attendance Data:", data);
+        // }
+    </script>
+</body>
+
+</html>

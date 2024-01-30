@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+    <script src="constant/filePaths.js"></script>
+</head>
+
+<body>
+    <div id="loadingSpinnerDiv" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <img src="./icons/LoadingGif.gif" alt="Loading..">
+    </div>
+    <div id="addStudentContainer" style="display: none;">
+        <div id="left-side">
+            <h2>Add/Edit Student</h2>
+            <div class="id_class_Wrapper">
+                <label>ID: <input type="number" id="id"></label><br>
+                <label>Class:
+                    <select id="class">
+                        <option value="Bca">Bca</option>
+                        <option value="Mca">Mca</option>
+                        <option value="Msc">Msc</option>
+                    </select>
+                </label><br> <br>
+                <!-- <span style="font-weight: bold;">Status:</span>
+                <select id="status">
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                </select> -->
+              
+
+            </div>
+            <label>User Name: <br> <input type="text" id="username"></label><br>
+            <label>Name: <br> <input type="text" id="name"></label><br>
+            <label>Password: <br><input type="password" id="password"></label><br>
+            <span style="margin-left: 20px;" id="warningTxt"></span> <br>
+            <button onclick="addStudent()"> <img src="./icons/add.png" alt=""> Add</button>
+            <button onclick="editStudent()"> <img src="./icons/edit.png" alt=""> Edit</button>
+            <button onclick="saveStudent()"> <img src="./icons/save.png" alt=""> Save</button>
+            <button id="deleteBtn" onclick="deleteStudent()"> <img src="./icons/delete.png" alt=""> Delete</button>
+        </div>
+
+        <div id="right-side">
+            <h2>Student List</h2>
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">Select</th>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th class="hiddenCol">Password</th>
+                        <th class="hiddenCol">DB ID</th>
+                        <!-- <th class="hiddenCol">Attendance Status</th> -->
+                        <!-- <th>Attendance Status</th> -->
+                        <!-- <th class="hiddenCol">Class</th> -->
+                        <th >Class</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="students.js"></script>
+</body>
+
+</html>

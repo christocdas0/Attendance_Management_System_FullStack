@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Attendance</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./constant/filePaths.js"></script>
+    <!-- <script src="app.js"></script> -->
+</head>
+
+<body>
+    <div id="addAttendanceMainContainer">
+        <div id="left-side">
+            <h2>View Attendance</h2>
+            <label for="attendanceDate">Date:</label>
+            <input type="text" id="attendanceDate" /> <br />
+            <label for="class">Class:</label>
+            <select id="class">
+                <option value="bcs">BCS</option>
+                <option value="bca">BCA</option>
+                <option value="mca">MCA</option>
+            </select>
+            <br />
+
+            <button onclick="filterView()">Filter View</button>
+            <!-- <button id="absentBtn" onclick="showStatus('Absent')">Show Absent</button> -->
+            <!-- <button onclick="showStatus('Present')">Show Present</button> -->
+            <button id="deleteBtn" onclick="viewAttendance()">Clear Filter</button>
+            <!-- <button onclick="submitAttendance()"> <img src="./icons/save.png" alt=""> Submit</button> -->
+        </div>
+
+        <div id="right-side">
+            <h2>Attendance Table</h2>
+            <span id="attendanceStatusText"></span>
+            <table id="attendanceTable">
+                <thead>
+                    <tr>
+                        <!-- <th>Select</th> -->
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th class="hiddenCol">DB ID</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        
+
+        // function markAbsent() {
+        //     updateStatus("Absent");
+        // }
+
+        // function markPresent() {
+        //     updateStatus("Present");
+        // }
+
+        // function updateStatus(status) {
+        //     var table = document.getElementById("attendanceTable");
+        //     var rows = table
+        //         .getElementsByTagName("tbody")[0]
+        //         .getElementsByTagName("tr");
+
+        //     for (var i = 0; i < rows.length; i++) {
+        //         var cells = rows[i].getElementsByTagName("td");
+        //         if (cells.length > 3) {
+        //             // Check if row has enough cells
+        //             var checkbox = cells[0].getElementsByTagName("input")[0];
+        //             if (checkbox.checked) {
+        //                 cells[3].innerText = status;
+        //             }
+        //         }
+        //     }
+        // }
+
+        // function clearTable() {
+        //     var table = document
+        //         .getElementById("attendanceTable")
+        //         .getElementsByTagName("tbody")[0];
+        //     while (table.firstChild) {
+        //         table.removeChild(table.firstChild);
+        //     }
+        // }
+        // function submitAttendance() {
+        //     var table = document.getElementById("attendanceTable");
+        //     var rows = table
+        //         .getElementsByTagName("tbody")[0]
+        //         .getElementsByTagName("tr");
+        //     var data = [];
+
+        //     for (var i = 0; i < rows.length; i++) {
+        //         var cells = rows[i].getElementsByTagName("td");
+        //         if (cells.length > 3) {
+        //             // Check if row has enough cells
+        //             var checkbox = cells[0].getElementsByTagName("input")[0];
+        //             var id = cells[1].innerText;
+        //             var name = cells[2].innerText;
+        //             var status = cells[3].innerText;
+        //             data.push({ id: id, name: name, status: status });
+                    
+        //         }
+        //     }
+        //     var attendanceStatusText = document.getElementById('attendanceStatusText');
+        //     attendanceStatusText.style.visibility = 'visible';
+        //     attendanceStatusText.innerText = 'Submitted!!';
+        //     attendanceStatusText.style.color = '#20f30d';
+        //     attendanceStatusText.style.background = '#664848';
+        //     attendanceStatusText.style.padding = '3px';
+        //     attendanceStatusText.style.borderRadius = '10px';
+        //     setTimeout(function(){
+        //         attendanceStatusText.style.visibility = 'hidden';
+        //     },2000)
+        //     console.log("Attendance Data:", data);
+        // }
+    </script>
+    <script src="viewAttendance.js"></script>
+</body>
+
+</html>

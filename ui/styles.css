@@ -1,0 +1,324 @@
+:root {
+  --mainColor_1: #90b5d6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Login page */
+.loginFormMainWrapper {
+  /* display: flex;
+  height: 100vh;
+  background-image: url(./icons/bgImg.jpg); */
+  display: flex;
+  /* height: 100%; */
+  background-image: url(./icons/bgImg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.loginFormMainWrapper .attandanceDisplayField {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  align-items: flex-end;
+  font-family: sans-serif;
+  color: #58afe1;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.attandanceDisplayField h1 {
+  margin: 0px;
+}
+
+.loginFormMainWrapper .loginFormContainer {
+  /* width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--mainColor_1); */
+  width: 50vw;
+  background-color: rgb(3 3 3 / 50%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+form {
+  max-width: 300px;
+  margin: auto;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button {
+  /* background-color: #4caf50; */
+  background-color: #a5f4aa;
+  color: black;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+}
+button img{
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+
+#invalidUserNameTxt {
+  color: red;
+  visibility: hidden;
+}
+
+/* Admin page */
+.adminPageContainer {
+  /* width: 100vw; */
+  height: 100vh;
+  background-color: var(--mainColor_1);
+  padding: 5px;
+}
+
+.adminPageContainer .welcomText {
+  font-size: 20px !important;
+  font-weight: bold;
+}
+
+.adminPageContainer .adminSubContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.adminPageContainer .studentsSecBtn,
+.adminPageContainer .addEditAttendanceSec,
+.adminPageContainer .teachersSecBtn,
+.adminPageContainer .admin_Cls {
+  width: 70%;
+  margin: 10px 0;
+}
+
+.adminPageContainer .addEditAttendanceSec,
+.adminPageContainer .admin_Cls {
+  display: flex;
+  gap: 15px;
+}
+
+/* Student Page */
+
+#studentContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--mainColor_1);
+  min-height: 93vh;
+}
+
+#left-side {
+  flex: 1;
+}
+
+#studentContainer #left-side h2 {
+  margin-bottom: 20%;
+}
+
+#left-side p {
+  font-size: 25px !important;
+}
+
+#right-side {
+  flex: 1;
+  overflow: auto;
+
+}
+input {
+  outline: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 3px;
+  text-align: left;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background-color: #fddb0b;
+  z-index: 1;
+}
+
+/* Admin add edit delete page */
+#adminAddEditRemoveContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--mainColor_1);
+  max-height: 93vh;
+  min-height: 93vh;
+}
+#adminAddEditRemoveContainer #left-side input{
+  width: 75% !important;
+  margin: 5px 0;
+}
+#adminAddEditRemoveContainer #left-side button{
+  width: 15%;
+  margin-left: 2%;
+}
+
+/* Classes Page */
+#adminAddEditRemoveClassContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--mainColor_1);
+  max-height: 93vh;
+  min-height: 93vh;
+}
+#adminAddEditRemoveClassContainer #left-side input{
+  width: 75% !important;
+  margin: 5px 0;
+}
+#adminAddEditRemoveClassContainer #left-side button{
+  width: 15%;
+  margin-left: 2%;
+}
+
+/* Teachers welcome page */
+#teacherWelcomePageContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--mainColor_1);
+  max-height: 93vh;
+  min-height: 93vh;
+  align-items: center;
+}
+#teacherWelcomePageContainer h2{
+  margin-bottom: 2% !important;
+}
+#teacherWelcomePageContainer button{
+  width: 100%;
+  margin: 10% 0;
+}
+
+/* View Attendance */
+#addAttendanceMainContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--mainColor_1);
+  max-height: 93vh;
+  min-height: 93vh;
+}
+#addAttendanceMainContainer input{
+  width: 20%;
+  padding: 5px 0;
+}
+#addAttendanceMainContainer select{
+  padding: 7px;
+  margin: 5% 0;
+}
+#addAttendanceMainContainer button{
+  width: 50%;
+}
+#addAttendanceMainContainer button img{
+  left: 35%;
+}
+#deleteBtn{
+  /* background-color: red; */
+  background-color: #f16781;
+}
+#absentBtn{
+  background-color: gray;
+}
+/* Add Student  */
+#addStudentContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--mainColor_1);
+  max-height: 93vh;
+  min-height: 93vh;
+}
+/* #addStudentContainer #id{
+  width: 20%;
+}
+#addStudentContainer #class{
+  padding: 10px;
+} */
+#addStudentContainer .id_class_Wrapper{
+  display: flex;
+  align-items: center;
+}
+#addStudentContainer .id_class_Wrapper input, #addStudentContainer .id_class_Wrapper select{
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  outline: none;
+  margin: 0px 20px 10px 0px;
+}
+#addStudentContainer input{
+  width: 70%;
+}
+#addStudentContainer button{
+  width: 15%;
+  margin-left: 9px;
+}
+.hiddenCol{
+  display: none !important;
+}
+
+input[type="radio"]{
+  width: 15px !important;
+  margin: 0px !important;
+}
+.presentCls{
+  background-color: #a5f4aa;
+}
+.absentCls{
+  background-color: #f16781;
+}
+#loaderCont{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: none;
+}
