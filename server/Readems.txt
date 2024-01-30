@@ -8,7 +8,7 @@ Steps to follow..
 4.) Set up the DB, 
 
    user name : user1
-   password : 20242024
+   password : ******
 
    4.1) Install MongoDb Compass ( url : https://www.mongodb.com/try/download/community )
          how to set up mongodb ( video link : https://www.youtube.com/watch?v=h2x6BmUi5zQ )
