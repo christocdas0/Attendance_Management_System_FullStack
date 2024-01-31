@@ -2,12 +2,10 @@ let warningTxt = document.getElementById('warningTxt');
 
 getUsersData();
 function getUsersData (){
-    //debugger
     var getUserUrl = urls.getUsers
     fetch(getUserUrl)
     .then((response) => response.json())
     .then((data) => {
-        //showOrHide('loadingSpinnerDiv', 'addStudentContainer', false);
 		console.log(data)
         const tableBody = document
             .getElementById("userTable")
@@ -101,7 +99,6 @@ function addUser() {
 }
 
 function editUser() {
-	//debugger
     var table = document.getElementById("userTable");
     var checkboxes = table.getElementsByTagName("input");
     var editFlg = true;
