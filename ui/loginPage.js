@@ -5,9 +5,6 @@ let loginBtn = document.getElementById("loginBtn");
 function validateLogin() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-
-  // loginBtn.style.display = 'none';
-  // validateTxt.style.display= 'flex';
   let isValid = false;
   validateUserStorage.forEach((val) => {
     if (val.username == username && val.password == password) {
